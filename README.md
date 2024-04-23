@@ -1,4 +1,4 @@
-A simple pattern repetition game designed for NI USB-6008+SPUSt-1. It can be used as a scheme for a similar device. 
+__A simple pattern repetition game designed for NI USB-6008+SPUSt-1. It can be used as a scheme for a similar device. __
 NI USB-6008 is a data aquisition device, whereas SPUSt-1 is an actual device used here for playing. This projects utilizes interactive elements of SPUSt-1: 2 rows of 3 colored diodes each, row of 3 buttons and a knobe.
 
 Project is divided into subVIs, main program is located in the projekt.vi file - open it to run the whole game. 
