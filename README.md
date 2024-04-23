@@ -6,23 +6,23 @@ Upon starting the program user can choose display time - this modifies the amoun
 
 I realised this project using a state machine. To give a quick rundown of what each state does:
 
-    - Initialized: starts the task for each of the physical channels used here
+ - Initialize: starts the task for each of the physical channels used here
     
-    - Start - loops over until user clicks the green button (port1/line2), reads data from the knobe (ai1), converts it and accordingly sets time and points per move, also displays high score list
+ - Start - loops over until user clicks the green button (port1/line2), reads data from the knobe (ai1), converts it and accordingly sets time and points per move, also displays high score list
     
-    - Add element - generated random power of 2 (1/2/4) and adds it to pattern sequence
+ - Add element - generated random power of 2 (1/2/4) and adds it to pattern sequence
     
-    - Display - loops over until all the elements of the sequence had been displayed, element of a sequence is a number (1/2/4) it gets converted to a bool array and negated as this is a fitting input for diodes physical channel (port0/line0:2) since they are activated by a low state [i.e. 2 -> 010 -> 101 -> diode 1 is on]
+- Display - loops over until all the elements of the sequence had been displayed, element of a sequence is a number (1/2/4) it gets converted to a bool array and negated as this is a fitting input for diodes physical channel (port0/line0:2) since they are activated by a low state [i.e. 2 -> 010 -> 101 -> diode 1 is on]
     
-    - Check - loops over until user pressed a button, then it checks whether it's a right move by comparing it to sequence
+ - Check - loops over until user pressed a button, then it checks whether it's a right move by comparing it to sequence
     
-        - to be more specific: program waits until not a single button is pressed, then waits 300ms to avoid reading data from bouncing and only after that waits for a propper button click
+   - to be more specific: program waits until not a single button is pressed, then waits 300ms to avoid reading data from bouncing and only after that waits for a propper button click
         
-    - Game result - displays appropriate diode sequence (loosing/high score) and writes score to the file (it prompts the user to choose it if it's not set)
+- Game result - displays appropriate diode sequence (loosing/high score) and writes score to the file (it prompts the user to choose it if it's not set)
     
-    - High score and Game over - display adequate diode sequence
+ - High score and Game over - display adequate diode sequence
     
-    - Stop - clears all the data sent to physical channels and stops all the tasks.
+ - Stop - clears all the data sent to physical channels and stops all the tasks.
 
 
 
